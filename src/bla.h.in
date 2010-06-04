@@ -1,2 +1,4 @@
 
 #define BLA 1
+
+#define HUI <?py:echo("PORTB=0x00;")?>

@@ -1,6 +1,7 @@
 #define F_CPU F_OSC
 #include <avr/io.h>
 #include <util/delay.h>
+#include "bla.h"
 
 #define sbi(port, bit) (port) |= (1 << (bit))
 #define cbi(port, bit) (port) &= ~(1 << (bit))

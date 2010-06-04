@@ -203,8 +203,8 @@ extcoff: $(TARGET).elf
 %.o : %.c
 	@echo
 	@echo $(MSG_COMPILING) $<
-	$(BUILD_SYSTEM) eval $< -o $<.pev.c
-	$(CC) -c $(INCLUDES) $(ALL_CFLAGS) $<.pev.c -o $@
+	$(BUILD_SYSTEM) eval $< -o $(<:.c=.bsout.c)
+	$(CC) -c $(INCLUDES) $(ALL_CFLAGS) $(<:.c=.bsout.c) -o $@
 
 
 # Compile: create assembler files from C source files.
@@ -251,7 +251,7 @@ clean_list:
 	$(REMOVE) $(SRC:.c=.s)
 	$(REMOVE) $(SRC:.c=.d)
 	$(REMOVE) .dep/*
-	$(REMOVE) $(SRC:.c=.pev.c)
+	$(REMOVE) $(SRC:.c=.bsout.c)
 	rm -f $(PROCESSED_HEADER)
 	find src/ -name cachedconfig.pickle\* -exec rm "{}" ";"
 
