@@ -1,0 +1,5 @@
+to make this work, you have to clone buildsystem and configure it in userconfig.mk
+
+i will try to integrate make it easier by trying to use submodules
+
+This is meant to be a basic template for other avr-projects using my buildsystem
